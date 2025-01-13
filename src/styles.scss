@@ -15,6 +15,7 @@
 
   h1 {
     font-size: 1.25rem;
+    color: var(--mat-sys-primary);
 
     @include u.media('t') {
       font-size: 1.75rem;

@@ -1,3 +1,6 @@
+@use 'commons' as c;
+@use 'utils' as u;
+
 :host {
   position: relative;
   height: 100vh;
@@ -13,5 +16,22 @@
 
   main {
     flex:1;
+
+    @include c.hor-paddings;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+
+    @include u.media('tl') {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+    }
   }
 }
