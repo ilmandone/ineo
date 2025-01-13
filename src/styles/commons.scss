@@ -1,0 +1,21 @@
+@use 'utils' as u;
+
+@mixin hor-paddings() {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include u.media('d') {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@mixin sides-ver-padding() {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  @include u.media('d') {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}

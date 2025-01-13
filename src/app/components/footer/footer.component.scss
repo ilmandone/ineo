@@ -1,0 +1,11 @@
+@use 'commons' as c;
+
+:host {
+  position: relative;
+  display: block;
+
+  @include c.hor-paddings;
+  @include c.sides-ver-padding;
+
+  font-size: 0.75rem;
+}
