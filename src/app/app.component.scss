@@ -16,9 +16,6 @@
 
   main {
     flex:1;
-
-    @include c.hor-paddings;
-
     padding-top: 2rem;
     padding-bottom: 2rem;
 
@@ -29,9 +26,13 @@
     grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
 
+    @include c.hor-paddings;
+
     @include u.media('tl') {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
+
+      overflow: hidden;
     }
   }
 }
