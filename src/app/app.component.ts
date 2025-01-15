@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
 
     this._state.taskRefresh$.subscribe(() => {
       this.data.set([...this._db.getTask()])
+      this._state.setCanDelete(null)
     })
   }
 }

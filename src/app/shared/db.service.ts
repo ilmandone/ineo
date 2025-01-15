@@ -51,4 +51,16 @@ export class DbService {
       })
     )
   }
+
+  updateTask(task: Task): Observable<Task> {
+    return this._httpClient.put<Task>(`${this.API_URL}/${task.id}`, task).pipe(
+      catchError(err => {
+        throw new Error(err)
+      }),
+      tap(r => {
+        const tIndex = this._data.findIndex(t => t.id === r.id)
+        this._data.splice(tIndex, 1, task)
+      })
+    )
+  }
 }

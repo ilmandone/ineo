@@ -1,0 +1,17 @@
+@use 'utils' as u;
+
+:host {
+
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-form-field {
+    width: 20rem;
+
+    @include u.media('tl') {
+      width: 30rem;
+    }
+  }
+}

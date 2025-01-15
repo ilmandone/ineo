@@ -11,4 +11,11 @@
   mat-card-header {
     margin-bottom: 0.5rem;
   }
+
+  mat-card-content{
+    display: flex;
+    p {
+      flex:1
+    }
+  }
 }
