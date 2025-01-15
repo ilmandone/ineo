@@ -27,7 +27,7 @@ export class DbService {
   createTask(v: Omit<Task, 'id'>): Observable<Task> {
     const data = {
       ...v,
-      id: this._data.length + 1
+      id: (this._data.length + 1).toString()
     }
     return this._httpClient.post<Task>(`${this.API_URL}`, data)
       .pipe(
@@ -40,7 +40,15 @@ export class DbService {
       )
   }
 
-  deleteTask(id: number): Observable<Task> {
-    return this._httpClient.delete<Task>(`${this.API_URL}/${id}`)
+  deleteTask(id: string): Observable<Task> {
+    return this._httpClient.delete<Task>(`${this.API_URL}/${id}`).pipe(
+      catchError(err => {
+        throw new Error(err)
+      }),
+      tap(r => {
+        const tIndex = this._data.findIndex(t => t.id === r.id)
+        this._data.splice(tIndex, 1)
+      })
+    )
   }
 }

@@ -18,7 +18,7 @@ import {Task} from '../../shared/commons';
 })
 export class HeaderComponent {
   private readonly _dialog = inject(MatDialog);
-  private readonly _dbSrv = inject(DbService)
+  private readonly _db = inject(DbService)
 
   readonly state = inject(StateService)
 
@@ -27,15 +27,23 @@ export class HeaderComponent {
 
     dialogRef.afterClosed().subscribe(r => {
       const newTask: Task = {
-        id: -1,
+        id: "",
         title: r.title,
         description: r.desc,
         state: 'TODO'
       }
 
-      this._dbSrv.createTask(newTask).subscribe(() => {
+      this._db.createTask(newTask).subscribe(() => {
         this.state.refreshTasks()
       })
     })
+  }
+
+  deleteTask() {
+    const id = this.state.canDelete()
+    if (id)
+      this._db.deleteTask(id).subscribe(() => {
+        this.state.refreshTasks()
+      })
   }
 }

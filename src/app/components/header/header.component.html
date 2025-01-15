@@ -3,7 +3,7 @@
   <button (click)="newTaskDialog()" mat-mini-fab aria-label="Add task">
     <mat-icon>add</mat-icon>
   </button>
-  <button [disabled]="!state.canDelete()" mat-mini-fab aria-label="Delete task">
+  <button [disabled]="!state.canDelete()" (click)="deleteTask()" mat-mini-fab aria-label="Delete task">
     <mat-icon>delete</mat-icon>
   </button>
 </div>

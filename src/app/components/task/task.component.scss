@@ -3,6 +3,11 @@
   display: block;
 
   margin-bottom: 1rem;
+
+  mat-card.selected {
+    background: var(--mat-sys-inverse-primary);
+  }
+
   mat-card-header {
     margin-bottom: 0.5rem;
   }

@@ -7,13 +7,13 @@ import {Subject} from 'rxjs';
 export class StateService {
 
   private _refreshTasks = new Subject<void>()
-  private _canDelete = signal<boolean>(false)
+  private _canDelete = signal<string | null>(null)
 
   get canDelete() {
     return this._canDelete.asReadonly()
   }
 
-  setCanDelete(v: boolean) {
+  setCanDelete(v: string) {
     this._canDelete.set(v)
   }
 

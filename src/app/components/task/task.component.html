@@ -1,5 +1,4 @@
-<mat-card appearance="outlined">
-
+<mat-card [appearance]="isSelected() ? 'raised' : 'outlined' " [class.selected]="isSelected()">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{data().title}}</mat-card-title>

@@ -15,4 +15,5 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/mat
 })
 export class TaskComponent {
   data = input.required<Task>()
+  isSelected = input<boolean>(false)
 }
