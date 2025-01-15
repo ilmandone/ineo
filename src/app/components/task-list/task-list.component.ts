@@ -1,5 +1,5 @@
-import {Component, effect, ElementRef, HostListener, inject, input, output} from '@angular/core';
-import { Task } from 'src/app/shared/commons';
+import {Component, effect, inject, input, output} from '@angular/core';
+import {Task} from 'src/app/shared/commons';
 import {TaskComponent} from '../task/task.component';
 import {StateService} from '../../shared/state.service';
 
@@ -14,16 +14,6 @@ import {StateService} from '../../shared/state.service';
 export class TaskListComponent {
   private _state = inject(StateService)
 
-  /*private _elRef = inject(ElementRef)
-
-  @HostListener('document:click', ['$event'])
-  handleClickOutside(event: PointerEvent) {
-    const targetElement = event.target as HTMLElement;
-    if (!this._elRef.nativeElement.contains(targetElement)) {
-      console.log('Click fuori dall\'elemento');
-    }
-  }*/
-
   title = input.required<string>()
   tasks = input<Task[]>()
 
@@ -36,7 +26,7 @@ export class TaskListComponent {
     });
   }
 
-  clickTask(id: string, event$: MouseEvent) {
+  clickTask(id: string) {
     this._state.setCanDelete(id)
   }
 }
