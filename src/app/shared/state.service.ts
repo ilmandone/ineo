@@ -8,6 +8,7 @@ export class StateService {
 
   private _refreshTasks = new Subject<void>()
   private _canDelete = signal<string | null>(null)
+  private _showLoader = signal<boolean>(false)
 
   get canDelete() {
     return this._canDelete.asReadonly()
@@ -23,5 +24,13 @@ export class StateService {
 
   refreshTasks() {
     this._refreshTasks.next()
+  }
+
+  get showLoader() {
+    return this._showLoader.asReadonly()
+  }
+
+  setShowLoader(v: boolean) {
+    this._showLoader.set(v)
   }
 }

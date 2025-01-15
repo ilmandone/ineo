@@ -1,121 +1,121 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Aggiornare documentazione progetto 2",
-      "description": "Revisione e aggiornamento della documentazione tecnica del progetto principale",
-      "state": "IN PROGRESS"
+      "id": 1,
+      "title": "Aggiornare documentazione progetto",
+      "state": "IN PROGRESS",
+      "description": "Revisione e aggiornamento della documentazione tecnica del progetto principale"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Ottimizzare performance database",
       "state": "TODO",
       "description": "Analizzare e migliorare le query del database per aumentare le prestazioni"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Implementare autenticazione OAuth",
       "state": "DONE",
       "description": "Integrazione del sistema di autenticazione OAuth 2.0 per l'accesso utenti"
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "Creare pagina profilo utente",
       "state": "TODO",
       "description": "Sviluppare interfaccia per la gestione del profilo utente"
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "Testing automatizzato frontend",
       "state": "IN PROGRESS",
       "description": "Implementare suite di test automatizzati per componenti frontend"
     },
     {
-      "id": "6",
+      "id": 6,
       "title": "Backup giornaliero dati",
       "state": "DONE",
       "description": "Configurare sistema di backup automatico giornaliero"
     },
     {
-      "id": "7",
+      "id": 7,
       "title": "Aggiornare dipendenze npm",
       "state": "TODO",
       "description": "Verificare e aggiornare tutte le dipendenze npm all'ultima versione stabile"
     },
     {
-      "id": "8",
+      "id": 8,
       "title": "Implementare notifiche push",
       "state": "IN PROGRESS",
       "description": "Integrare sistema di notifiche push per mobile e desktop"
     },
     {
-      "id": "9",
+      "id": 9,
       "title": "Ottimizzare immagini sito",
       "state": "DONE",
       "description": "Comprimere e ottimizzare tutte le immagini del sito web"
     },
     {
-      "id": "10",
+      "id": 10,
       "title": "Fixing bug report #234",
       "state": "TODO",
       "description": "Risolvere problema di visualizzazione su Safari mobile"
     },
     {
-      "id": "11",
+      "id": 11,
       "title": "Implementare dark mode",
       "state": "IN PROGRESS",
       "description": "Aggiungere tema scuro all'interfaccia utente"
     },
     {
-      "id": "12",
+      "id": 12,
       "title": "Migrazione server",
       "state": "DONE",
       "description": "Completare migrazione al nuovo server cloud"
     },
     {
-      "id": "13",
+      "id": 13,
       "title": "Refactoring codice legacy",
       "state": "TODO",
       "description": "Modernizzare e ottimizzare il codice delle funzionalità principali"
     },
     {
-      "id": "14",
+      "id": 14,
       "title": "Aggiungere analytics",
       "state": "IN PROGRESS",
       "description": "Integrare Google Analytics 4 per il tracking delle metriche"
     },
     {
-      "id": "15",
+      "id": 15,
       "title": "Setup CI/CD pipeline",
       "state": "DONE",
       "description": "Configurare pipeline di continuous integration e deployment"
     },
     {
-      "id": "16",
+      "id": 16,
       "title": "Implementare ricerca full-text",
       "state": "TODO",
       "description": "Aggiungere funzionalità di ricerca avanzata nei contenuti"
     },
     {
-      "id": "17",
+      "id": 17,
       "title": "Ottimizzare SEO",
       "state": "IN PROGRESS",
       "description": "Migliorare metadati e performance per SEO"
     },
     {
-      "id": "18",
+      "id": 18,
       "title": "Aggiornare SSL certificato",
       "state": "DONE",
       "description": "Rinnovare certificato SSL per il dominio principale"
     },
     {
-      "id": "19",
+      "id": 19,
       "title": "Testing sicurezza",
       "state": "TODO",
       "description": "Eseguire penetration testing e verifiche di sicurezza"
     },
     {
-      "id": "20",
+      "id": 20,
       "title": "Documentare API",
       "state": "IN PROGRESS",
       "description": "Creare documentazione completa delle API REST"

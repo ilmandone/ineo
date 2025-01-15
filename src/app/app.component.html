@@ -18,6 +18,10 @@
     <app-task-lisk-skeleton [title]="'DONE'"/>
   }
 
+  @if(this.state.showLoader()) {
+    <app-loader/>
+  }
+
 </main>
 <footer ineo></footer>
 

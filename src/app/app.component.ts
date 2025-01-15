@@ -16,10 +16,11 @@ import {Task} from './shared/commons';
 import {DbService} from './shared/db.service';
 import {StateService} from './shared/state.service';
 import {TaskListSkeletonComponent} from './components/task-lisk-skeleton/task-list-skeleton.component';
+import {LoaderComponent} from './components/loader/loader.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FooterComponent, TaskListComponent, TaskListSkeletonComponent],
+  imports: [HeaderComponent, FooterComponent, TaskListComponent, TaskListSkeletonComponent, LoaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -29,7 +30,7 @@ export class AppComponent implements OnInit {
   @ViewChildren(TaskListComponent, {read: ElementRef}) taskLists!: QueryList<ElementRef<HTMLElement>>
 
   private _db = inject(DbService)
-  private _state = inject(StateService)
+  state = inject(StateService)
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: PointerEvent) {
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
     }
 
     // Consider only the 3 task list component and the header controls
-    if (count === 4) this._state.setCanDelete(null)
+    if (count === 4) this.state.setCanDelete(null)
   }
 
   data = signal<Task[] | undefined>(undefined)
@@ -69,9 +70,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this._loadData()
 
-    this._state.taskRefresh$.subscribe(() => {
+    this.state.taskRefresh$.subscribe(() => {
       this.data.set([...this._db.getTask()])
-      this._state.setCanDelete(null)
+      this.state.setCanDelete(null)
     })
   }
 }

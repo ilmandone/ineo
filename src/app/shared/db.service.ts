@@ -12,8 +12,8 @@ export class DbService {
   private _httpClient = inject(HttpClient)
   private _data!: Task[]
 
-  loadTasks(): Observable<Task[]> {
-    return this._httpClient.get<Task[]>(this.API_URL)
+  loadTasks(sort?:string): Observable<Task[]> {
+    return this._httpClient.get<Task[]>(`${this.API_URL}${sort ? `?_sort=title` : ''}`)
       .pipe(
         delay(1500),
         tap(r => {
