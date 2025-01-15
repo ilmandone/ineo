@@ -15,10 +15,11 @@ import {TaskListComponent} from './components/task-list/task-list.component';
 import {Task} from './shared/commons';
 import {DbService} from './shared/db.service';
 import {StateService} from './shared/state.service';
+import {TaskListSkeletonComponent} from './components/task-lisk-skeleton/task-list-skeleton.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FooterComponent, TaskListComponent],
+  imports: [HeaderComponent, FooterComponent, TaskListComponent, TaskListSkeletonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

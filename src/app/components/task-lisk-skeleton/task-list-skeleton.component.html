@@ -1,0 +1,13 @@
+<h2>{{title()}}</h2>
+
+@for(item of randomArray; track $index) {
+  <div
+    class="skeleton-loader"
+    [style.width]="width()"
+    [style.height]="height()"
+    [class.rounded]="rounded()"
+  >
+    <div class="animation-wave"></div>
+  </div>
+}
+

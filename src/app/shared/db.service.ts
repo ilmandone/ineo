@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {catchError, Observable, tap} from 'rxjs';
+import {catchError, delay, Observable, tap} from 'rxjs';
 import {Task} from './commons';
 import {HttpClient} from '@angular/common/http';
 
@@ -15,6 +15,7 @@ export class DbService {
   loadTasks(): Observable<Task[]> {
     return this._httpClient.get<Task[]>(this.API_URL)
       .pipe(
+        delay(1500),
         tap(r => {
           this._data = r
         }))
