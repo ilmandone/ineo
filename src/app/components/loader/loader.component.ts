@@ -23,6 +23,8 @@ import {MatProgressBar} from '@angular/material/progress-bar';
       justify-content: center;
       align-items: center;
 
+      z-index: 999;
+
       mat-progress-bar {
         width: 80vw;
       }

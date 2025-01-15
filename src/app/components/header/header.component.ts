@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, input, OnInit} from '@angular/core';
 import {MatMiniFabButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {StateService} from '../../shared/state.service';
@@ -25,10 +25,13 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
+
   private readonly _dialog = inject(MatDialog);
   private readonly _db = inject(DbService)
 
   readonly state = inject(StateService)
+
+  disabled = input<boolean>(true)
 
   selected = new FormControl('valid');
   options = [
