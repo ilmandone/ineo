@@ -1,1 +1,27 @@
-<router-outlet />
+<header #headerEl ineo [disabled]="!data()"></header>
+<main>
+  @defer (when taskToDo()) {
+    <app-task-list [title]="'TODO'" [tasks]="taskToDo()"/>
+  } @placeholder () {
+    <app-task-lisk-skeleton [title]="'TODO'"/>
+  }
+
+  @defer (when taskInProgress()) {
+    <app-task-list [title]="'IN PROGRESS'" [tasks]="taskInProgress()"/>
+  } @placeholder () {
+    <app-task-lisk-skeleton [title]="'IN PROGRESS'"/>
+  }
+
+  @defer (when taskDone()) {
+    <app-task-list [title]="'DONE'" [tasks]="taskDone()"/>
+  } @placeholder () {
+    <app-task-lisk-skeleton [title]="'DONE'"/>
+  }
+
+  @if(this.state.showLoader()) {
+    <app-loader/>
+  }
+
+</main>
+<footer ineo></footer>
+

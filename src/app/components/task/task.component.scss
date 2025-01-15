@@ -1,0 +1,21 @@
+:host {
+  position: relative;
+  display: block;
+
+  margin-bottom: 1rem;
+
+  mat-card.selected {
+    background: var(--mat-sys-inverse-primary);
+  }
+
+  mat-card-header {
+    margin-bottom: 0.5rem;
+  }
+
+  mat-card-content{
+    display: flex;
+    p {
+      flex:1
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use 'commons' as c;
+@use 'utils' as u;
+
+:host {
+  position: relative;
+  height: 100vh;
+
+  overflow-y: hidden;
+
+  display: flex;
+  flex-flow: column;
+
+  header, footer {
+    flex: 0;
+  }
+
+  main {
+    flex:1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+
+    @include c.hor-paddings;
+
+    @include u.media('tl') {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+
+      overflow: hidden;
+    }
+  }
+}

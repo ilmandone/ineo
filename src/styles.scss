@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'reset';
+@use 'utils' as u;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@layer reset, custom;
+
+/* Reset CSS */
+@layer reset {
+  @include reset.styles;
+}
+
+@layer custom {
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  h1 {
+    font-size: 1.5rem;
+    color: var(--mat-sys-primary);
+
+    @include u.media('t') {
+      font-size: 1.75rem;
+    }
+
+    @include u.media('d') {
+      font-size: 2rem;
+    }
+  }
+}
+
+

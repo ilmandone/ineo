@@ -1,0 +1,21 @@
+<h1>Task manager</h1>
+<div class="controls">
+
+    <mat-form-field [class.disabled]="disabled()">
+      <mat-label>Sort By</mat-label>
+      <mat-select [formControl]="selected" [disabled]="disabled()">
+        <mat-option>Clear</mat-option>
+        @for (food of options; track food) {
+          <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+
+  <button (click)="newTaskDialog()" mat-mini-fab aria-label="Add task" [disabled]="disabled()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button [disabled]="!state.canDelete() || disabled()" (click)="deleteTask()" mat-mini-fab aria-label="Delete task">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

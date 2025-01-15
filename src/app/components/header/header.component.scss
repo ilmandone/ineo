@@ -1,0 +1,38 @@
+@use 'commons' as c;
+@use 'utils' as u;
+
+:host {
+  position: relative;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  pointer-events: none;
+
+  @include c.hor-paddings;
+  @include c.sides-ver-padding;
+
+  h1 {
+    text-align: left;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+
+    pointer-events: auto;
+
+    button {
+      margin-left: 1.5rem;
+    }
+
+    .disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+  }
+}
