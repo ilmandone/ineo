@@ -1,1 +1,9 @@
 <h1>Task manager</h1>
+<div class="controls">
+  <button (click)="newTaskDialog()" mat-mini-fab aria-label="Add task">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button [disabled]="!state.canDelete()" mat-mini-fab aria-label="Delete task">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

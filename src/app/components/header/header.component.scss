@@ -3,16 +3,26 @@
 
 :host {
   position: relative;
-  display: block;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
 
   width: 100%;
-
-  text-align: center;
 
   @include c.hor-paddings;
   @include c.sides-ver-padding;
 
-  @include u.media('d') {
+  h1 {
     text-align: left;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+
+    button:not(:first-child){
+      margin-left: 1rem;
+    }
   }
 }
