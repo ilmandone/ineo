@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, ElementRef, HostListener, inject, input} from '@angular/core';
 import {Task} from '../../shared/commons';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 
@@ -14,6 +14,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/mat
   styleUrl: './task.component.scss'
 })
 export class TaskComponent {
+
   data = input.required<Task>()
   isSelected = input<boolean>(false)
 }

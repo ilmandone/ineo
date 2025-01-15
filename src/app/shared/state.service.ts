@@ -13,7 +13,7 @@ export class StateService {
     return this._canDelete.asReadonly()
   }
 
-  setCanDelete(v: string) {
+  setCanDelete(v: string | null) {
     this._canDelete.set(v)
   }
 

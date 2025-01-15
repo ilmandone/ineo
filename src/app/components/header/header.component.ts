@@ -43,6 +43,7 @@ export class HeaderComponent {
     const id = this.state.canDelete()
     if (id)
       this._db.deleteTask(id).subscribe(() => {
+        this.state.setCanDelete(null)
         this.state.refreshTasks()
       })
   }

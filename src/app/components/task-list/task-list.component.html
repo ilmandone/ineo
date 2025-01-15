@@ -1,7 +1,7 @@
 <h2>{{title()}}</h2>
 <div class="tasks">
   @for(t of tasks(); track t.id) {
-    <app-task [data]="t" [isSelected]="selectedId === t.id" (click)="clickTask(t.id)"/>
+    <app-task [data]="t" [isSelected]="selectedId === t.id" (click)="clickTask(t.id, $event)"/>
   }
 </div>
 
