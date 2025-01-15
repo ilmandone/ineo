@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this._loadData()
     this._state.taskRefresh$.subscribe(r => {
-      this._loadData()
+      this.data.set(this._db.getTask())
     })
   }
 }
